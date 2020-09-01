@@ -17,12 +17,12 @@
 
 <h2>Introduction, Part I</h2>
 
-<p>This tutorial will show you how to use the free NHGIS service to obtain U.S. Census data that you can use in GIS analysis and mapping.</p>
+<p>This tutorial will show you how to use the free NHGIS service to obtain demographic data that you can use in GIS analysis and mapping.</p>
 
 <p>You will:</p>
 
 <ul>
-	<li><a href="#filtering">search for</a> and <a href="#selecting">download</a> Census data from the NHGIS website;</li>
+	<li><a href="#filtering">search for</a> and <a href="#selecting">download</a> data from the NHGIS website;</li>
 	<li><a href="#joining">work with your downloaded data</a> and turn it into a useable shapefile;</li>
 	<li>and narrow your data down to a <a href="#specificpart">specific part</a> of the United States.</li>
 </ul>
@@ -31,7 +31,7 @@
 
 <h2>Introduction, Part II</h2>
 
-<p>One of the most common geospatial data requests we receive at the AGSL involves U.S. Census data. If your research involves racial and ethnic groups, housing, language, employment, education, wealth distribution, or any of the other metrics the U.S. Census measures, chances are you would like to have this data too. Obtaining the numbers on their own is easy enough &mdash; see <a href="http://factfinder.Census.gov/faces/nav/jsf/pages/index.xhtml">American FactFinder</a> &mdash; but adding a spatial dimension to your research requires a different approach.</p>
+<p>One of the most common geospatial data requests we receive at the AGSL involves demographic data from the US Census or American Community Survey. If your research involves racial and ethnic groups, housing, language, employment, education, wealth distribution, or any of the other metrics the U.S. Census Bureau collects, chances are you would like to have this data too. There are tools for downloading tabular data, but many want to use the data in GIS software.
 
 <p>The <a href="https://nhgis.org/">National Historical Geographical Information System (NHGIS)</a>, a service provided by the Minnesota Population Center at the the University of Minnesota, is one of the best ways to get this data. If you&#39;re learning about GIS at UWM, you likely want a shapefile that you can use for analysis in ArcGIS or QGIS. Data from NHGIS can also be adapted for web maps, interactive applications, and cartography.</p>
 
@@ -47,16 +47,21 @@
 	<li>We have already mentioned that NHGIS is great for obtaining U.S. Census data. Data is also available from a <a href="https://nhgis.org/user-resources/data-availability">variety of other U.S. surveys</a>, so be sure to note any that might be useful to you.</li>
 	<li>You may use the data you obtain with NHGIS in a report or publication, provided you <a href="https://nhgis.org/research/citation">include proper citation</a>.</li>
 	<li>NHGIS is an incredibly powerful tool. While we can provide an in-depth look at how to obtain and utilize basic data, you are encouraged to browse the NHGIS website to learn about more advanced functionality once you&#39;re comfortable.
-	<p>&nbsp;</p>
 	</li>
 	<li>You may not use NHGIS data for any malicious purpose. It&#39;s part of their terms. Use it to develop your skills, to better understand the world around you, to help others, and/or to spread knowledge!</li>
 </ul>
 
-<p>If you require further assistance, please e-mail the AGSL GIS data team at <a href="mailto:gisdata@uwm.edu">gisdata@uwm.edu</a>. Happy mapping!</p>
+<p>If you require further assistance, please e-mail the AGSL GIS data team at <a href="mailto:gisdata@uwm.edu">gisdata@uwm.edu</a></p>
+
+<p>If this is your first time working with Census products, you might want a bit more background information first! Pleaes check out our <a href="https://guides.library.uwm.edu/census">Census LibGuide</a>.</p>
+
+<p>Happy mapping!</p>
+
+<h2 id="video">Quick Video Introduction</h2>
+<p>Want a quick video introduction before getting started? Watch this video from NHGIS:</p>
+<iframe style="display:block; margin:1em auto" width="560" height="315" src="https://www.youtube.com/embed/P1znKKm8vX4" frameborder="0" allowfullscreen></iframe>
 
 <h2 id="filtering">Filtering Data</h2>
-
-<iframe style="display:block; margin:1em auto" width="560" height="315" src="https://www.youtube.com/embed/P1znKKm8vX4" frameborder="0" allowfullscreen></iframe>
 
 <p>The first thing one must do is <a href="https://uma.pop.umn.edu/nhgis/user/new?return_url=https%3A%2F%2Fdata2.nhgis.org%2Fmain">create a Minnesota Population Center account</a>. The process is quick and painless. A permanent record of all extracts (data) you obtain will be tied to your account, allowing you to access or revise them later.</p>
 
@@ -70,11 +75,13 @@
 
 <p><img alt="Census Tract option" src="https://s3.amazonaws.com/libapps/accounts/113117/images/2-geoglevel-censustract.png" /></p>
 
-<p>Click on the yellow plus sign next to Census Tract (or whatever geographic level you will be using). This will add that level to the Selected Geographic Level Filters area at the top of the page. Note that you <em>can</em> select as many units as you want, but this may add a layer of confusion to your process. Do whatever you are comfortable with. Once you are satisfied with the level(s) you have chosen, click <strong>Submit</strong> at the bottom of the window.</p>
+<p>Click on the green plus sign next to Census Tract (or whatever geographic level you will be using). This will add that level to the Selected Geographic Level Filters area at the top of the page. Note that you <em>can</em> select as many units as you want, but this may add a layer of confusion to your process. Let's stick to Census Tract.</p>
+	
+<p>Click <strong>Submit</strong> at the bottom of the window.</p>
 
-<p>A bunch of rows will now appear on the page. There are far too many to look through with such a limited filter; let&#39;s add more.</p>
+<p>A bunch of rows will now appear on the page. There are far too many to look through with such a limited filter; let&#39;s filter further.</p>
 
-<p>Click on <strong>Years</strong>. If you only want to look at U.S. Census data, the Decennial Years column will be your only concern; U.S. Census data is collected every ten years. Some options will be greyed out, but you can still select them. The greyed-out options are years for which data is not available given the other filters you&#39;ve selected. For example, since we chosen Census Tracts as our geographic level, every decennial year prior to 1910 is grey. This is because Census Tracts were not used before 1910!</p>
+<p>Click on <strong>Years</strong>. If you only want to look at U.S. Census data, the Decennial Years column will be your only concern; U.S. Census data is collected every ten years. Some options will be greyed out, but you can still select them. The greyed-out options are years for which data is not available given the other filters you&#39;ve selected. For example, since we chosen Census Tracts as our geographic level, every decennial year prior to 1910 is grey. This is because Census Tracts were never used before 1910!</p>
 
 <p><img alt="Years options" src="https://s3.amazonaws.com/libapps/accounts/113117/images/3-selectyear.png" /></p>
 
@@ -82,13 +89,13 @@
 
 <p>The rows under Select Data will update once more, but there are still a lot of records. Let&#39;s click on <strong>Topics</strong> to really narrow it down.</p>
 
-<p>Find the topic(s) you wish to map in the list that pops up. In our experience, most UWM students are concerned with <em>Population</em> data, but there are other categories that can be accessed using the tabs on the left. Again, options may be greyed out if data for those topics cannot be obtained given the other filters you have selected. We&#39;re interested in measuring the African American population in Milwaukee County, so we will select Race as our topic.</p>
+<p>Find the topic(s) you wish to map in the list that pops up. In our experience, most UWM students are concerned with <em>Population</em> data, but there are other categories that can be accessed using the tabs on the left. Again, options may be greyed out if data for those topics cannot be obtained given the other filters you have selected. We&#39;re interested in data about the black population in Milwaukee County, so we will select <strong>race</strong> as our topic.</p>
 
 <p><img alt="Topics options" src="https://s3.amazonaws.com/libapps/accounts/113117/images/4-selecttopic.png" /></p>
 
-<p>The first plus sign next to Race is the Table Topic Filter; the second is the Breakdown Filter. You may click the blue question mark next to each of these terms at the top of the table to learn more. For the purposes of this tutorial, we will just note that we are only interested in the Table Topic Filter, and only in very niche projects would one be interested in the Breakdown Filter. Click on the first plus sign and <strong>Submit</strong> once more.</p>
+<p>The first plus sign next to Race is the Table Topic Filter; the second is the Breakdown Filter. You may click the green question mark next to each of these terms at the top of the table to learn more. For the purposes of this tutorial, we will use Table Topic Filter. Click on the first plus sign and <strong>Submit</strong> once more.</p>
 
-<p>We could select <strong>Datasets</strong> to narrow down our search even further, but it is not necessary considering the specificity of the other three filters. By all means take a look at the options available to you, but at this point most of them will probably be greyed out.</p>
+<p>We could select <strong>Datasets</strong> to narrow down our search even further, but it is not necessary considering the specificity of the other three filters. Take a look at the dataset filters anyway and notice how many are now unavailable. That's because of our previous filters for geography, year, and topic.</p>
 
 <h2 id="selecting">Selecting &amp; Downloading Data</h2>
 
