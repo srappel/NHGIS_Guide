@@ -63,9 +63,9 @@
 
 <h2 id="filtering">Filtering Data</h2>
 
-<p>The first thing one must do is <a href="https://uma.pop.umn.edu/nhgis/user/new?return_url=https%3A%2F%2Fdata2.nhgis.org%2Fmain">create a Minnesota Population Center account</a>. The process is quick and painless. A permanent record of all extracts (data) you obtain will be tied to your account, allowing you to access or revise them later.</p>
+<p>The first thing one must do is <a href="https://uma.pop.umn.edu/nhgis/user/new?return_url=https%3A%2F%2Fdata2.nhgis.org%2Fmain" target="_blank">create a Minnesota Population Center account</a>. The process is quick and painless. A permanent record of all extracts (data) you obtain will be tied to your account, allowing you to access or revise them later.</p>
 
-<p>Now the fun part. On the <a href="https://nhgis.org/">NHGIS homepage</a>, click the <strong>Select Data</strong> link on the left menu. You will see a page similar to this:</p>
+<p>Now the fun part. On the <a href="https://nhgis.org/" target="_blank">NHGIS homepage</a>, click the <strong>Browse and Select Data</strong> link on the left menu. Alternatively, you may click on the <strong>Get Data</strong> button on the homepage or the <strong>Select Data</strong> link on the top navigation menu. You will see a page similar to this:</p>
 
 <p><img alt="Data Finder page" src="https://s3.amazonaws.com/libapps/accounts/113117/images/1-datafinder.png" /></p>
 
@@ -115,11 +115,11 @@
 
 <p>You may notice that we&#39;ve been using the term &quot;data table.&quot; That&#39;s because when you download data from NHGIS, it is delivered to you in the form of a table &mdash; the kind of thing you could open in, for instance, Microsoft Excel. It has no associated geographic coordinates, and it&#39;s definitely not a shapefile.</p>
 
-<p>In the same area where you selected which dataset you want, click on the <strong>GIS Boundary Files</strong> tab. If you&#39;ve provided adequate Geographic Levels and Years filters, the list of results will be mercifully short. In fact, our query only returns one boundary file!</p>
+<p>In the same area where you selected which dataset you want, click on the <strong>GIS FILES</strong> tab. If you&#39;ve provided adequate Geographic Levels and Years filters, the list of results will be mercifully short. In fact, our query only returns two boundary files!</p>
 
 <p><img alt="Boundary files results" src="https://s3.amazonaws.com/libapps/accounts/113117/images/7-boundaryfiles.png" /></p>
 
-<p>This boundary file contains all Census Tract boundaries used in the 2010 U.S. Census. We&#39;ll add it to our Data Cart by clicking on the green plus sign. The cart will update accordingly.</p>
+<p>The boundary file that we are interested in is the <strong>2010 TIGER/Line +</strong>. This boundary file contains all Census Tract boundaries used in the 2010 U.S. Census. We&#39;ll add it to our Data Cart by clicking on the green plus sign. The cart will update accordingly.</p>
 
 <p><img alt="Data cart" src="https://s3.amazonaws.com/libapps/accounts/113117/images/8-datacart.png" /></p>
 
@@ -147,25 +147,25 @@
 
 <p>Keep both the boundary file and data table you downloaded somewhere on your computer where you&#39;ll be able to find it later.</p>
 
-<p>It&#39;s time to open ArcMap. Note that what we&#39;ll be doing can be done in pretty much any GIS software, such as the free <a href="http://qgis.org/en/site/">QGIS</a>. Most UWM students will develop their GIS skills with ArcGIS, and it is available on all public computers across campus that are running Windows. This includes the computers on the first floor of the library.</p>
+<p>It&#39;s time to open ArcGIS Pro. Note that what we&#39;ll be doing can be done in pretty much any GIS software, such as the free <a href="http://qgis.org/en/site/">QGIS</a>. Most UWM students will develop their GIS skills with ArcGIS, and it is available on all public computers across campus that are running Windows. This includes the computers on the first floor of the library.</p>
 
-<p>We&#39;ll work on a new, blank map document. Use the <strong>Add Data</strong> button to add both the .CSV table and shapefile you downloaded from NHGIS to your document. If that sentence made no sense to you, see the ArcGIS documentation: <a href="http://resources.arcgis.com/en/help/main/10.1/0066/00660000000t000000.htm">Adding layers to a map</a>.</p>
+<p>We&#39;ll work on a new, blank map template. Assign the project any name you want. Navigate to the <strong>Map</strong> tab. Click the <strong>Add Data</strong> button and select <strong>Data</strong>  to add both the .CSV table and shapefile you downloaded from NHGIS to your document. If that sentence made no sense to you, see the ArcGIS Pro documentation: <a href="https://pro.arcgis.com/en/pro-app/help/mapping/layer-properties/add-layers-to-a-map.htm#ESRI_SECTION1_FABB01A75AFE4A1FB0BEC3D7CE74E3C5">Adding layers to a map</a>.</p>
 
-<p>If your computer is old, this next part will require some patience. Your boundary shapefile contains boundaries from <em>the entire United States</em>, so ArcMap may take a little while to render it all. If your computer is having difficulty processing so much data, you can temporarily pause map drawing on the bottom left corner of the map view.</p>
+<p>If your computer is old, this next part will require some patience. Your boundary shapefile contains boundaries from <em>the entire United States</em>, so ArcGIS may take a little while to render it all. If your computer is having difficulty processing so much data, you can temporarily pause map drawing on the bottom left corner of the map view.</p>
 
 <p><img alt="Starting ArcMap" src="https://s3.amazonaws.com/libapps/accounts/113117/images/10-startingarcmap.png" /></p>
 
 <p>We need to associate the data in the .CSV data table with the boundaries in our shapefile. This will be done by <em>joining</em> the tables. In GIS, the term <em>join</em> has a very specific meaning. In our case, it involves finding a column that both our .CSV data table and our shapefile&#39;s attribute table have in common, and merging the two into one big table.</p>
 
-<p>The intricacies of joins/relates in GIS are beyond the scope of this document. If you want to learn more &mdash; and as a GIS analyst you really must! &mdash; check out the ArcGIS documentation: <a href="http://resources.arcgis.com/en/help/main/10.1/005s/005s0000002n000000.htm">About joining and relating tables</a>.</p>
+<p>The intricacies of joins/relates in GIS are beyond the scope of this document. If you want to learn more &mdash; and as a GIS analyst you really must! &mdash; check out the ArcGIS documentation: <a href="https://pro.arcgis.com/en/pro-app/help/data/tables/joins-and-relates.htm">About joining and relating tables</a>.</p>
 
 <p>If you have not done this sort of thing in the past, right click on one of the file names in the left column &mdash; in our example, <strong>US_tract_2010</strong> and <strong>nhgis0017_ds172_2010_tract.csv</strong> &mdash; and open the (attribute) table. Thoroughly examining the table of any data you download is good practice. Do you see which field we&#39;re going to use to join the tables? If it&#39;s not immediately obvious, you&#39;re thinking about it too much. Look at the names of all the columns!</p>
 
 <p><img alt="Table view" src="https://s3.amazonaws.com/libapps/accounts/113117/images/11-tableview.png" /></p>
 
-<p>NHGIS very conveniently includes a GISJOIN column in all of its data. In other words, they&#39;ve done a big part of the hard work for us! Right-click on the shapefile name (for us, <strong>US_tract_2010</strong>), hover over <strong>Joins and Related</strong>, and click on <strong>Join</strong>.</p>
+<p>NHGIS very conveniently includes a GISJOIN column in all of its data. In other words, they&#39;ve done a big part of the hard work for us! Right-click on the shapefile name (for us, <strong>US_tract_2010</strong>), hover over <strong>Joins and Relates</strong>, and click on <strong>Add Join</strong>.</p>
 
-<p>The drop-down should already have &quot;Join attributes from a table&quot; selected, so leave that as it is. The first blank field prompts you to choose a field from the current file for your join. That would be GISJOIN. The second drop-down should already have your data table selected, but if not, do that. Finally, the last part asks which field you&#39;re going to base the join on &mdash; again, that would be GISJOIN. It doesn&#39;t matter which option you select under Join Options, though you might as well play it safe and select the first. Your window should look something like this:</p>
+<p>For the <strong>Input Table</strong> field US_Tract_2010 should be selected. If it is not, you can use the drop-down menu to add it manually. Next set <strong>Input Join Field</strong> to GISJOIN using the drop-down menu. The <strong>Join Table</strong> drop-down should already have your data table selected, but if not, do that. Finally, the last field, <strong>Join Table Field</strong> asks which field you&#39;re going to base the join on &mdash; again, that would be GISJOIN. It doesn&#39;t matter which option you select under Join Options, though you might as well play it safe and select the first. Your window should look something like this:</p>
 
 <p><img alt="Join dialog" src="https://s3.amazonaws.com/libapps/accounts/113117/images/12-joindialog.png" /></p>
 
@@ -183,7 +183,7 @@
 
 <p>Check out the data table for your shapefile. You will find two columns: one begins with STATEFP, the other with COUNTYFP. They will be followed by a number; in our case, this is 10, because we are using data from 2010. Each state and county in the United States has a unique combination if FIPS codes. A simple way to find the FIPS code for an area is to use the official U.S. Census website: <a href="https://www.census.gov/geo/reference/codes/cou.html">2010 FIPS Codes for Counties and County Equivalent Entities</a>. The FIPS code for Wisconsin is 55; for Milwaukee County, 079.</p>
 
-<p>Click on the icon on the top left of the attribute table window, then select <strong>Select by Attributes</strong>. Alternatively, you can use the <strong>Select</strong> menu at the top of the main ArcMap window.</p>
+<p>Click on the icon on the top left of the attribute table window, then select <strong>Select by Attributes</strong>. Alternatively, you can use <strong>Select by Attributes</strong> under the Map tab.</p>
 
 <p><img alt="Table Options menu" src="https://s3.amazonaws.com/libapps/accounts/113117/images/14-tableoptions.png" /></p>
 
